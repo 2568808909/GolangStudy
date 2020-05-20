@@ -54,6 +54,13 @@ func string2Data() {
 	var i int64
 	i, _ = strconv.ParseInt(str, 10, 0) //不管是转成整数还是浮点数，最终都是转成int64或float64，如果要使用更小范围的数据，既要显示转换
 	fmt.Printf("str type %T str=%d\n", i, i)
+
+	//对于转换不成功的数值返回该类型的默认值，int->0 bool->false
+	str = "hello"
+	var e error
+	i, _ = strconv.ParseInt(str, 10, 0) //hello并不可以转换为int64类型，这里会默认返回一个0
+	fmt.Printf("str type %T str=%d\n", i, i)
+	fmt.Println(e)
 }
 
 func main() {
