@@ -9,4 +9,8 @@ func main() {
 	var f = float32(i) //var f float32 = float32(i)  前面的float32可以省略，因为后面赋值已经知道其类型了
 	var b = byte(i)
 	fmt.Printf("i=%d f=%f b=%d", i, f, b)
+
+	var k int64 = 999
+	k = k + int64(i) //在进行运算时，也要显示进行转换
+
 }
