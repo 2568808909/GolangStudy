@@ -8,6 +8,7 @@ func main() {
 	s := "hello,world"
 	fmt.Println("string =", s)
 	fmt.Println("length of string :", len(s))
+	fmt.Printf("address of string : %v\n", &s)
 	fmt.Println()
 
 	//直接通过以下方式是无法将string转换为切片的
@@ -18,4 +19,6 @@ func main() {
 	fmt.Println("slice =", slice)
 	fmt.Println("length of slice :", len(slice))
 	fmt.Printf("type of slice : %T", slice)
+	//对于string类型，切片所指向的数组并非原来string指向的，而是创建了一个新的数组，然后将string中的数据copy到新的数组当中
+	fmt.Printf("address of slice : %p %p\n", &slice, slice)
 }
