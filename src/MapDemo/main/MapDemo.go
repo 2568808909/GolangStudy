@@ -6,7 +6,7 @@ import (
 
 func main() {
 
-	//map在声明后为nil，并不能立刻使用，要使用make函数进行空间的分配后才可以
+	//map在声明后为nil，并不能立刻使用，要使用make函数进行空间的分配后才可以，map的定义方式是 map[key类型]value类型
 	var m map[string]string
 	m = make(map[string]string, 3)
 	m["name"] = "tom"
