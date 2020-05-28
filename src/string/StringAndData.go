@@ -6,6 +6,7 @@ import (
 )
 
 //基本数据转为String
+//Golang中的string实质也是一个结构体，内部有两个字段，一个是指向数据的指针，一个是字符串长度类型为int，所以Golang中的string固定占用2个字节
 func data2String() {
 	var num int32 = 128
 	var num2 float64 = 0.999
