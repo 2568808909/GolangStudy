@@ -1,6 +1,7 @@
 package main
 
 import (
+	"StructDemo/model"
 	"StructDemo/utils"
 	"fmt"
 )
@@ -63,4 +64,9 @@ func main() {
 	a := A{5}
 	b := B(a)
 	fmt.Println(b)
+
+	//该包下的teacher结构体首字母小写，在包外无法访问，可以通过在包内提供一个工厂方法创建实例
+	teacher := model.GetInstance("阚忠良", 10.01)
+	//这里使用的是面向对象封装的思想，包外无法访问name和balance这些字段，但是可以通过在包内提供方法实现访问
+	fmt.Println("teacher name :", teacher.GetName(), "balance =", teacher.GetBalance())
 }
