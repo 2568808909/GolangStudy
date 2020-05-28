@@ -11,6 +11,14 @@ type Person struct {
 	Number *int
 }
 
+type A struct {
+	Num int
+}
+
+type B struct {
+	Num int
+}
+
 func test01(person Person) {
 	person.Name = "Jack"
 	fmt.Println("test ", person, *person.Number)
@@ -50,4 +58,9 @@ func main() {
 	test02(&p1)
 	fmt.Println("main p1:", p1, *p1.Number)
 	fmt.Println()
+
+	//不同的类型的结构体实例可以互相转换，不过有个前提就是：两者之间的字段数量，字段名和字段类型都要一致
+	a := A{5}
+	b := B(a)
+	fmt.Println(b)
 }
