@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"extendDemo/model"
+	"fmt"
+)
 
 type Student struct {
 	StuNo string
@@ -46,4 +49,7 @@ func main() {
 	graduate := Graduate{Student{"20164698", "PKB", 21}}
 	fmt.Println("graduate student number =", graduate.StuNo)
 	fmt.Println(graduate)
+
+	teacher := model.GetTeacher("杨丰", 60)
+
 }
