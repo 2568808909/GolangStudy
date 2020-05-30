@@ -11,6 +11,23 @@ type teacher struct {
 	person
 }
 
+type B struct {
+}
+
+type C struct {
+}
+
+//Go中支持多重继承，只需要写入多个匿名结构体即可，不过剁成继承容易造成混乱，所以不推荐使用
+type D struct {
+	B
+	C
+}
+
+type A struct {
+	person
+	int //基本类型也可以进行继承
+}
+
 func GetTeacher(name string, age int) *teacher {
 	return &teacher{
 		person{

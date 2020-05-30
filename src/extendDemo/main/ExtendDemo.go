@@ -51,5 +51,5 @@ func main() {
 	fmt.Println(graduate)
 
 	teacher := model.GetTeacher("杨丰", 60)
-
+	fmt.Println(teacher)
 }
