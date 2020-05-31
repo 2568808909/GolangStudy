@@ -1,4 +1,4 @@
-package main
+package serial
 
 import (
 	"encoding/json"
@@ -46,8 +46,4 @@ func SerialSlice() {
 	//反序列化
 	e = json.Unmarshal(bytes, &slice)
 	fmt.Println(slice)
-}
-
-func main() {
-	SerialAndUnSerial()
 }
