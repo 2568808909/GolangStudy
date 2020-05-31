@@ -28,6 +28,7 @@ func flagArgs() {
 	var host string
 	var port int
 
+	//StringVar用指定的名称、默认值、使用信息注册一个string类型flag，并将flag的值保存到p指向的变量
 	flag.StringVar(&user, "u", "", "用户名")
 	flag.StringVar(&password, "p", "", "密码")
 	flag.StringVar(&host, "h", "localhost", "主机名")
