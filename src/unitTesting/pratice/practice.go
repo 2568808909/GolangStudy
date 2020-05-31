@@ -39,6 +39,7 @@ func Serial() int {
 
 func UnSerial(nn int) serial.Monster {
 	readFile, _ := os.OpenFile("C:\\Users\\Administrator\\Desktop\\杂七杂八的文档\\Monster.txt", os.O_RDONLY, 0666)
+	defer readFile.Close()
 	reader := bufio.NewReader(readFile)
 	data := make([]byte, nn) //这里data的切片要大于等于文件中的字节数，不然无法存储所有的数据
 	//data := make([]byte, 100)     //如果给data的空间比文件所含的字节数多，进行反序列化时需要注意，要对此切片进行再切片，否则无法成功反序列化
