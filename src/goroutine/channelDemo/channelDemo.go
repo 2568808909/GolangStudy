@@ -32,4 +32,19 @@ func main() {
 	fmt.Println("put success")
 	time.Sleep(time.Second * 4)
 
+	//遍历channel。值得注意的是，如果没有关闭channel，使用这种方式遍历，会一直向channel中取数据，没有数据时就会死锁(阻塞)
+	//关闭channel后，就不会有以上问题
+	//for v := range intChan {
+	//	fmt.Println(v)
+	//}
+
+	//关闭channel。关闭后不能往channel内写数据，但是可以读数据
+	close(intChan)
+	//fmt.Println(<-intChan)
+	//fmt.Println(<-intChan)
+	//intChan<-9 //panic: send on closed channel
+	for v := range intChan {
+		fmt.Println(v)
+	}
+
 }
