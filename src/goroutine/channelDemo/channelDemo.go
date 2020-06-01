@@ -40,7 +40,6 @@ func main() {
 
 	//关闭channel。关闭后不能往channel内写数据，但是可以读数据
 	close(intChan)
-	close(intChan)
 	//fmt.Println(<-intChan)
 	//fmt.Println(<-intChan)
 	//intChan<-9 //panic: send on closed channel
