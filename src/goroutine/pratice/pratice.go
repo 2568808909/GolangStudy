@@ -37,6 +37,7 @@ func calculation(n int) (res int) {
 
 //从intChan中取出数据，并写入到resChan中
 func process(no int) {
+	//在协程执行的方法中就要使用recover对错误进行处理，避免错误导致程序终止
 	defer func() {
 		if err := recover(); err != nil {
 			fmt.Println(err)
