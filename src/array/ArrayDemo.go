@@ -30,7 +30,7 @@ func main() {
 	arr3 := [5]int{1: 3, 0: 1, 4: 6}
 	fmt.Println("array =", arr3)
 	fmt.Println("length of array :", len(arr3))
-	fmt.Println("capacity of array :", cap(arr3))
+	fmt.Println("capacity of array     :", cap(arr3))
 	fmt.Println()
 
 	//长度也算是数组类型的一部分，arr2的长度为4，test函数的参数指定长度为5，这里调用是会报错的
